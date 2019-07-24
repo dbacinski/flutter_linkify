@@ -4,12 +4,12 @@ import 'package:flutter_web/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'dart:async';
 
-void main() => runApp(new LinkifyExample());
+void main() => runApp(LinkifyExample());
 
 class LinkifyExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'flutter_linkify example',
       home: Scaffold(
         appBar: AppBar(
@@ -26,6 +26,7 @@ class LinkifyExample extends StatelessWidget {
   }
 
   Future<void> _onOpen(LinkableElement link) async {
+    print("Opening link ${link.url}");
     await window.open(link.url, "tab");
   }
 }
